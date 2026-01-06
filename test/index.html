@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Detail Page | CSS Essentials</title>
+    <style>
+        /* 1. ESSENTIALS & BACKGROUNDS */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0b0e11; /* Dark theme background */
+            color: #ffffff;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        /* 2. THE GRID STRUCTURE (2-Column Layout) */
+        .movie-container {
+            max-width: 1000px;
+            margin: 0 auto; /* Center the whole container */
+            display: grid;
+            /* Column 1 is 350px, Column 2 takes the remaining space (1fr) */
+            grid-template-columns: 350px 1fr; 
+            gap: 50px;
+            background: linear-gradient(145deg, #1a1d23, #111419);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        /* 3. BOX MODEL (Padding, Margin, Borders) */
+        .poster-wrapper img {
+            width: 100%;
+            border-radius: 15px;
+            border: 1px solid #333;
+            transition: transform 0.3s ease;
+        }
+
+        .poster-wrapper img:hover {
+            transform: scale(1.02);
+        }
+
+        .details-wrapper h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #ffcc00; /* Highlight color */
+        }
+
+        .description {
+            margin: 20px 0;
+            color: #ccc;
+            font-size: 1.1rem;
+        }
+
+        /* 4. FLEXBOX (Genre Tags & Action Buttons) */
+        .genre-list {
+            display: flex;
+            gap: 12px;
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .genre-list li {
+            background: #333;
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            border: 1px solid #444;
+        }
+
+        .actions {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border-radius: 8px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-primary { background-color: #e50914; color: white; }
+        .btn-secondary { background-color: transparent; color: white; border: 1px solid white; }
+        
+        .btn:hover { opacity: 0.8; }
+
+        /* 5. FLEXBOX (Gallery Section) */
+        .recommendations {
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        .recommendations h3 {
+            margin-bottom: 20px;
+        }
+
+        .gallery {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto; /* Allows horizontal scrolling on small screens */
+            padding-bottom: 10px;
+        }
+
+        .gallery img {
+            width: 180px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            flex-shrink: 0; /* Prevents images from squeezing */
+        }
+
+        /* 6. RESPONSIVENESS (Media Queries) */
+        @media (max-width: 850px) {
+            .movie-container {
+                /* Change from 2-columns to 1-column */
+                grid-template-columns: 1fr;
+                padding: 20px;
+                text-align: center;
+            }
+
+            .poster-wrapper {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .genre-list, .actions {
+                justify-content: center;
+            }
+
+            .details-wrapper h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="movie-container">
+        <div class="poster-wrapper">
+            <img src="https://m.media-amazon.com/images/M/MV5BMmU5YWE4MzUtODNlYy00NTA5LWIyMzMtN2I3ZTM4ZWU3N2I0XkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg" alt="Leo Poster">
+        </div>
+
+        <div class="details-wrapper">
+            <h1>LEO</h1>
+            <ul class="genre-list">
+                <li>Action</li>
+                <li>Thriller</li>
+                <li>Crime</li>
+            </ul>
+            <p class="description">
+                Parthiban is a mild-mannered cafe owner in Himachal Pradesh, but his life takes a 
+                violent turn when he is targeted by a powerful gang who believes he is 
+                actually a former associate named Leo Das.
+            </p>
+            <div class="actions">
+                <button class="btn btn-primary">Watch Now</button>
+                <button class="btn btn-secondary">+ Add to Watchlist</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="recommendations">
+        <h3>More Like This</h3>
+        <div class="gallery">
+            <img src="https://m.media-amazon.com/images/M/MV5BZWMyYzFjYTYtNTRjYi00OGExLWE2YzgtNzRmYjA2ZDFmNzQzXkEyXkFqcGdeQXVyMTUyNjIwOTYy._V1_.jpg" alt="Vikram">
+            <img src="https://m.media-amazon.com/images/M/MV5BNmU1OTNlODctM2U4Yy00M2Y2LWIyMjYtZjU4ZWU4NTkzMGY5XkEyXkFqcGdeQXVyMTEzNzg0Mjkx._V1_.jpg" alt="Master">
+            <img src="https://m.media-amazon.com/images/M/MV5BMjA4NzU0OTYyMF5BMl5BanBnXkFtZTgwMDM3NzAyMDI@._V1_.jpg" alt="Kaithi">
+            <img src="https://m.media-amazon.com/images/M/MV5BYzJmMWUxZGYtZWY0My00ZWQ5LWEwN2EtYmE3N2I2N2JjZDg0XkEyXkFqcGdeQXVyMTY1MzAyNjU4._V1_.jpg" alt="Jailer">
+            <img src="https://m.media-amazon.com/images/M/MV5BZDUxY2IyZWMtNjA4OC00N2RjLTgwM2ItYmFhMWU0YDU2ZTM4XkEyXkFqcGdeQXVyMTI1NDEyNTM5._V1_.jpg" alt="Ponniyin Selvan">
+        </div>
+    </div>
+
+</body>
+</html>
