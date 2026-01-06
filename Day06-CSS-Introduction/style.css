@@ -1,0 +1,23 @@
+/* selector{
+    property: value
+ */
+
+body {
+    background-color: #27C8F5;
+}
+
+#title {
+    color: red;
+}
+
+.courses {
+    color: yellow;
+}
+
+#highlight {
+    color: blue;
+}
+
+#our-course{
+    color: peru;
+}
