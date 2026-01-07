@@ -1,0 +1,25 @@
+/* Mobile first design pattern */
+
+body{
+    background-color: aquamarine;
+}
+
+h1{
+    font-weight: bold;
+}
+
+/* Breakpoint for Tablet device - 600px & 768px */
+@media(min-width: 768px){
+    body{
+        background-color: blue;
+    }
+}
+
+/* Breakpoint for Laptop device - 1024px */
+@media(min-width: 1024px){
+    body{
+        background-color: black;
+        color: white;
+    }
+}
+
