@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="responsive navbar, products cards">
+    <title>Card + Modal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <style>
+        .destination-img{
+            max-height: 300px;
+            object-fit: cover;
+        }
+
+        /* .modal-img{
+            width: 80%;
+            height: 50%;
+        } */
+    </style>
+
+</head>
+<body>
+
+    <!-- navigation bar -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <h4 class="navbar-brand">TravelFul</h4>
+
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
+            <ul class="navbar-nav">
+                <li class="nav-item nav-link">Home</li>
+                <li class="nav-item nav-link">Destinations</li>
+            </ul>
+        </div>
+
+    </nav>
+
+    <!-- Card Sections -->
+
+    <div class="container mt-4">
+        <!-- Card Design starts here -->
+        <div class="card" style="width: 30%;">
+            <img src="https://i.pinimg.com/1200x/f2/62/57/f262572603c49791bbf013dc1c77a828.jpg" class="destination-img" alt="">
+
+            <div class="card-body">
+                <h5 class="card-title">16 Days India Tour</h5>
+                <p class="card-text fw-bold text-warning">50000 pp</p>
+                <p class="card-text text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam vero placeat</p>
+                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#bookingModal" >Book Now</button>
+            </div>
+        </div>
+    </div>
+<!-- Card Desgin ends here -->
+
+<!-- Modal Design -->
+    <div class="modal fade" id="bookingModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- modal-header -->
+                 <div class="modal-header">
+                    <h5>Booking Status</h5>
+                    <button data-bs-dismiss="modal" class="btn-close"></button>
+                 </div>
+
+                 <!-- modal-body -->
+                  <div class="modal-body">
+                    <h3 class="text-success fw-bold">Booking Successful</h3>
+                    <ul>
+                        <li class="text-muted">Day-1: Mumbai</li>
+                        <li class="text-muted">Day-2: Chennai</li>
+                    </ul>
+                    <!-- <img src="https://i.pinimg.com/1200x/f2/62/57/f262572603c49791bbf013dc1c77a828.jpg" class="modal-img" alt=""> -->
+
+                  </div>
+
+                  <!-- modal-footer -->
+                   <div class="modal-footer">
+                    <p class="text-muted">Booked on: Jan-12-2026</p>
+                   </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
