@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ai builded car reservation system">
+    <title>Car Reservation System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        .hero-section {
+            background: url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1583&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") center/cover no-repeat;
+            /* background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat; */
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            color: white;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.45);
+        }
+
+        .hero-content {
+            position: relative;
+            max-width: 650px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <a href="#" class="navbar-brand fw-bold">CarReserve AI</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content py-5">
+                <h1 class="display-4 fw-bold mb-3">Reserve Cars with Intelligent Assistance</h1>
+                <p class="lead mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni autem corrupti eos
+                    molestias optio ad, facere ipsam consequatur. Facere saepe in blanditiis provident sequi enim nemo
+                    vel aspernatur earum fuga!</p>
+
+                <div>
+                    <button class="btn btn-outline-light btn-lg">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center fw-semibold mb-5">Why Use Our Service?</h2>
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+                    <div class="card text-center p-4 border-0 shadow-sm h-100">
+                        <h5 class="fw-bold">AI Powered Convenience</h5>
+                        <p class="text-muted mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
+                            molestias sed animi architecto a eum maiores vel commodi nesciunt ipsa, et alias
+                            consequuntur deleniti laudantium blanditiis? Tenetur autem doloribus aliquam.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card text-center p-4 border-0 shadow-sm h-100">
+                        <h5 class="fw-bold">Available Anytime</h5>
+                        <p class="text-muted mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
+                            molestias sed animi architecto a eum maiores vel commodi nesciunt ipsa, et alias
+                            consequuntur deleniti laudantium blanditiis? Tenetur autem doloribus aliquam.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card text-center p-4 border-0 shadow-sm h-100">
+                        <h5 class="fw-bold">Wide Car Choices</h5>
+                        <p class="text-muted mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
+                            molestias sed animi architecto a eum maiores vel commodi nesciunt ipsa, et alias
+                            consequuntur deleniti laudantium blanditiis? Tenetur autem doloribus aliquam.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-3 bg-dark text-center text-white">
+        <p>&copy; 2026 CarReserve AI. All Rights Reserved</p>
+    </footer>
+
+
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger intent="WELCOME" chat-title="car_reservation_system" agent-id="61f72afb-71bc-4fa7-bf42-003cad597e67"
+        language-code="en"></df-messenger>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
