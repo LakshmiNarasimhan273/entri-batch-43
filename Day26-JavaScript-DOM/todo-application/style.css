@@ -1,0 +1,35 @@
+.todo-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+.input-group{
+    background-color: lightblue;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#taskInput{
+    padding: 4px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+
+.add-btn{
+    background-color: blue;
+    border: none;
+    outline: none;
+    padding: 4px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.add-btn:active{
+    background-color: green;
+}
