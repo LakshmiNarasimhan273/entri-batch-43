@@ -53,3 +53,12 @@ console.log("You're successfully logged in", username);
 // backtricks (``)
 // curly brackets {}
 console.log(`You're successfully logged in ${username} welcome back`);
+
+// Interview problem
+
+console.log(5 + "5"); // 55
+console.log(5 - "5"); // 0
+
+console.log(5 - "entri"); // NaN - Not as Number
+
+console.log(5 * "5");
