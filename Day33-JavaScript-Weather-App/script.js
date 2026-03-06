@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const city = document.getElementById("cityInput").value.trim();
         const resultDiv = document.getElementById("weatherResult");
 
-        const API_KEY = "247107d7e520ada8d515f771fe3b8f39";
+        const API_KEY = "<ADD YOUR OWN API>";
 
         if(!city){
             resultDiv.innerHTML = 
