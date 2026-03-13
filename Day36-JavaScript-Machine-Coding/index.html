@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="shopyfy cart application">
+    <title>Shopyfy - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-light bg-white shadow-sm px-3">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Shopyfy.</a>
+
+            <a class="btn btn-primary" href="cart.html">Cart <i class="bi bi-cart4"> <span id="cart-count"></span></i></a>
+
+            <button class="btn btn-outline-success btn-small rounded-pill">Download Application</button>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+        <h3 class="mb-3">Our Products</h3>
+
+        <div id="product-list" class="row g-3">
+            <!-- API Data will load here -->
+        </div>
+    </div>
+
+    <script>
+        let productData = [];
+
+        fetch("https://fakestoreapi.com/products")
+        .then(response => response.json())
+        .then(data => {
+            productData = data;
+            console.log(data);
+            displayProducts(data);
+        });
+
+        function displayProducts(products){
+            const list = document.getElementById("product-list");
+            list.innerHTML = "";
+
+            products.forEach(product => {
+                list.innerHTML += `
+                <div class="col-md-3">
+                    <div class="card h-100 p-2">
+                        <img src="${product.image}" class="card-img-top" style="height: 150px; object-fit: contain;" />
+                        <div class="card-body">
+                            <div style="height:40px">
+                                <h6 class="card-title text-truncate">${product.title}</h6>
+                            </div>
+                            <p class="fw-bold text-primary">${product.price}</p>
+                            <button class="btn btn-primary w-100" onclick="addtoCart(${product.id})">Add to Cart</button>
+                            </div>
+                    </div>
+                </div>
+                `
+            })
+            
+        };
+
+        function addtoCart(id){
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const product = productData.find(data => data.id === id);
+
+            let existProduct = cart.find(data => data.id === id);
+            // true
+
+            if(existProduct){
+                existProduct.qty++;
+            }else{
+                cart.push({...product, qty: 1});
+            }
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert("Product Added to Cart");
+            document.getElementById("cart-count").innerHTML = cart.length;
+
+        }
+
+    </script>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
