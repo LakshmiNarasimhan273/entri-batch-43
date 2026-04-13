@@ -1,0 +1,17 @@
+{
+  "users": [
+    {
+      "id": "3025",
+      "username": "Tester",
+      "email": "lakshmin@gmail.com",
+      "status": "Absent"
+    },
+    {
+      "username": "Narasimhan",
+      "email": "narasimhan@mail.com",
+      "status": "Present",
+      "id": "ISliXBrzyVE"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
