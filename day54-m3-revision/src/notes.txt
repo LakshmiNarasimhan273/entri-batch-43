@@ -1,0 +1,39 @@
+# conditional rendering - pure js ternary operator
+
+# list & events
+- list = pure js map function
+- events = onClick, onChange, onSubmit  
+
+# useState
+JS - variable + updatable Function = useState
+
+let num = 1;
+
+function update(num){
+    return num ++;
+}
+
+update(num);
+
+const[num, setNum] = useState(0);
+
+setNum(num++)
+
+# Form Validation
+
+JS - RegEx -> taken the html input value through DOM    
+React - RegEx -> taken the input values from useState
+
+# Navigation
+JS -> window.location.href = "home.html"
+React -> Routes & Route (Link)
+
+# createSlice -> slice environment
+- global data, reducer functions    
+
+# configureStore -> configuring the slice part
+
+# Routes, Route, Link -> 
+Routes = Parent Component to hold the inidividual Route
+Route = Unique path for component
+Link = making the Navigation part refered to the Route path
