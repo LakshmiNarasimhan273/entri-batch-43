@@ -3,6 +3,10 @@ const app = express();
 require("dotenv").config();
 
 const dbConnection = require("./config/dbconnection.config");
+const taskRoutes = require("./routes/task.route");
+
+app.use(express.json());
+app.use("/tasks", taskRoutes);
 
 dbConnection();
 app.listen(process.env.port, () => {
