@@ -26,6 +26,11 @@ const taskSchema = new mongoose.Schema({
         // not-started, in-progress, completed
         enum: ["not-started", "in-progress", "completed"],
         required: true
+    },
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: "users"
     }
 });
 
